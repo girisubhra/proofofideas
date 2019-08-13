@@ -6,16 +6,16 @@
 	
 	>
 <channel>
-	<title>Comments for PROOF OF IDEAS</title>
-	<atom:link href="https://girisubhra.github.io/proofofideas/comments/feed/" rel="self" type="application/rss+xml" />
-	<link>https://girisubhra.github.io/proofofideas</link>
+	<title>Comments on: Hello world!</title>
+	<atom:link href="https://girisubhra.github.io/proofofideas/2019/08/12/hello-world/feed/" rel="self" type="application/rss+xml" />
+	<link>https://girisubhra.github.io/proofofideas/2019/08/12/hello-world/</link>
 	<description>Just another WordPress site</description>
 	<lastBuildDate>Mon, 12 Aug 2019 04:24:59 +0000</lastBuildDate>
 	<sy:updatePeriod>hourly</sy:updatePeriod>
 	<sy:updateFrequency>1</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=4.7.13</generator>
 	<item>
-		<title>Comment on Hello world! by A WordPress Commenter</title>
+		<title>By: A WordPress Commenter</title>
 		<link>https://girisubhra.github.io/proofofideas/2019/08/12/hello-world/#comment-1</link>
 		<dc:creator><![CDATA[A WordPress Commenter]]></dc:creator>
 		<pubDate>Mon, 12 Aug 2019 04:24:59 +0000</pubDate>
