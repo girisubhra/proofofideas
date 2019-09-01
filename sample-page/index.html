@@ -110,7 +110,27 @@ img.emoji {
 				
 		<article id="post-2" class="post-2 page type-page status-publish hentry">
 
-		<p>We will be posting latest articles on emerging technologies in this space</p>
+		<h5><b>Network Architecture Diagram</b></h5>
+<p><img class="alignnone size-full wp-image-403" src="http://5gblogs.com/wp-content/uploads/2018/10/NW_Diagram.jpg" sizes="(max-width: 1237px) 100vw, 1237px" srcset="http://5gblogs.com/wp-content/uploads/2018/10/NW_Diagram.jpg 1237w, http://5gblogs.com/wp-content/uploads/2018/10/NW_Diagram-300x180.jpg 300w, http://5gblogs.com/wp-content/uploads/2018/10/NW_Diagram-768x462.jpg 768w, http://5gblogs.com/wp-content/uploads/2018/10/NW_Diagram-1024x616.jpg 1024w" alt="" width="1237" height="744" /></p>
+<h5><b>Functional Split of NW entities</b></h5>
+<p><img class="alignnone size-full wp-image-404" src="http://5gblogs.com/wp-content/uploads/2018/10/Functional_Split.jpg" sizes="(max-width: 1217px) 100vw, 1217px" srcset="http://5gblogs.com/wp-content/uploads/2018/10/Functional_Split.jpg 1217w, http://5gblogs.com/wp-content/uploads/2018/10/Functional_Split-300x186.jpg 300w, http://5gblogs.com/wp-content/uploads/2018/10/Functional_Split-768x475.jpg 768w, http://5gblogs.com/wp-content/uploads/2018/10/Functional_Split-1024x634.jpg 1024w" alt="" width="1217" height="753" /></p>
+<p>&nbsp;</p>
+<p>Above Network functions performed by different 5G Access Network entities</p>
+<p><b>Protocol Stack on different interfaces</b></p>
+<p><img class="alignnone size-full wp-image-418" src="http://5gblogs.com/wp-content/uploads/2018/10/ControlPlane.jpg" sizes="(max-width: 1418px) 100vw, 1418px" srcset="http://5gblogs.com/wp-content/uploads/2018/10/ControlPlane.jpg 1418w, http://5gblogs.com/wp-content/uploads/2018/10/ControlPlane-300x90.jpg 300w, http://5gblogs.com/wp-content/uploads/2018/10/ControlPlane-768x231.jpg 768w, http://5gblogs.com/wp-content/uploads/2018/10/ControlPlane-1024x308.jpg 1024w" alt="" width="1418" height="426" /></p>
+<p><img class="alignnone size-full wp-image-419" src="http://5gblogs.com/wp-content/uploads/2018/10/UserPlane.jpg" sizes="(max-width: 1353px) 100vw, 1353px" srcset="http://5gblogs.com/wp-content/uploads/2018/10/UserPlane.jpg 1353w, http://5gblogs.com/wp-content/uploads/2018/10/UserPlane-300x122.jpg 300w, http://5gblogs.com/wp-content/uploads/2018/10/UserPlane-768x312.jpg 768w, http://5gblogs.com/wp-content/uploads/2018/10/UserPlane-1024x416.jpg 1024w" alt="" width="1353" height="550" /></p>
+<p><img class="alignnone size-full wp-image-420" src="http://5gblogs.com/wp-content/uploads/2018/10/Xn.jpg" sizes="(max-width: 368px) 100vw, 368px" srcset="http://5gblogs.com/wp-content/uploads/2018/10/Xn.jpg 368w, http://5gblogs.com/wp-content/uploads/2018/10/Xn-300x210.jpg 300w" alt="" width="368" height="258" />     <img class="alignnone size-full wp-image-421" src="http://5gblogs.com/wp-content/uploads/2018/10/ServiceBasedStack.jpg" sizes="(max-width: 205px) 100vw, 205px" srcset="http://5gblogs.com/wp-content/uploads/2018/10/ServiceBasedStack.jpg 205w, http://5gblogs.com/wp-content/uploads/2018/10/ServiceBasedStack-193x300.jpg 193w" alt="" width="205" height="319" /></p>
+<p>&nbsp;</p>
+<p><strong>UU User-plane :</strong> Radio interface user-plane carries, user Application traffic, which follows UU-U (Above)protocol stack.  User-data is transparent to access nodes like gNB.</p>
+<p><strong>UU Control-plane :</strong> in control plane RRC, PDCP, RLC, MAC, PHY get terminated at gNB, but NAS termination point is AMF, so gNB transparently passes the NAS messages to AMF.</p>
+<p><strong>NG Control-plane(N2):</strong> this protocol stack is between gNB and AMF. This stack helps providing access to UE to core network and transports NAS messages. Also helps establishment of  user-plane tunnels for UE.</p>
+<p><strong>NG User-plane(N3) :</strong> This is the protocol stack between gNB and UPF. This stack carries user data over GTP-U tunnel established during session establishment over N2.</p>
+<p><strong>Xn user and control plane :</strong> Xn interface is between 2 gNBs or gNB-Ng-eNB. This does necessary signalling and data during mobility.</p>
+<p><strong>N4 Interface:</strong> This interface is between SMF and UPF, Used for UPF selection and setup of U-plane tunnels and enables PFDs on user plane entities.</p>
+<p><strong>Service based interfaces:</strong> Most of the core Network entities with Service based end points and they host services performed by them and exposed these services by REST APIs. Details are in below diagram.</p>
+<h5><b>Service Based Architecture</b></h5>
+<p><img class="alignnone size-full wp-image-407" src="http://5gblogs.com/wp-content/uploads/2018/10/ServiceBasedInterfaces.jpg" sizes="(max-width: 1251px) 100vw, 1251px" srcset="http://5gblogs.com/wp-content/uploads/2018/10/ServiceBasedInterfaces.jpg 1251w, http://5gblogs.com/wp-content/uploads/2018/10/ServiceBasedInterfaces-300x169.jpg 300w, http://5gblogs.com/wp-content/uploads/2018/10/ServiceBasedInterfaces-768x432.jpg 768w, http://5gblogs.com/wp-content/uploads/2018/10/ServiceBasedInterfaces-1024x575.jpg 1024w" alt="" width="1251" height="703" /></p>
+<p>In Service based Architecture, Network functions(Ex AMF) opens up services using service based access point(Namf) and other authorized network functions(Service Consumers) access this service through service these service access points. These interfaces are driven by REST APIs(HTTP)</p>
 
 		</article>
 
